@@ -20,6 +20,9 @@ addLayer("l", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
+    effect() {
+        return player[this.layer].points.pow(0.5)
+    },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "l", description: "L: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
